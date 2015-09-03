@@ -5,6 +5,7 @@ Dummy package for NPM tutorial
 ```
 npm init
 npm install @linclark/pkg
+npm install @linclark/pkg --save
 npm ls
 npm publish
 npm view @gabef/04-npm
@@ -18,4 +19,5 @@ npm dist-tag ls
 npm dist-tag rm @gabef/04-npm@1.0.1 tag1
 npm outdated
 npm update
+npm rm @linclark/pkg --save
 ```
