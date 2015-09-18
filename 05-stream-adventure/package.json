@@ -1,0 +1,19 @@
+{
+  "name": "05-stream-adventure",
+  "version": "1.0.0",
+  "description": "answers for stream-adventures tutorial",
+  "main": "01-beepboop.js",
+  "dependencies": {
+    "concat-stream": "^1.5.0",
+    "request": "^2.62.0",
+    "split": "^1.0.0",
+    "through2": "^2.0.0",
+    "websocket-stream": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
