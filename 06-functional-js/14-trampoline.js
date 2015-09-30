@@ -18,3 +18,25 @@ function trampoline(fn) {
 module.exports = function(operation, num) {
   return trampoline(repeat.bind(null, operation, num));
 }
+
+// --- Reference Solution ---
+
+function repeatRef(operation, num) {
+  return function() {
+    if (num <= 0) return
+    operation()
+    return repeat(operation, --num)
+  }
+}
+
+function trampolineRef(fn) {
+  while(fn && typeof fn === 'function') {
+    fn = fn()
+  }
+}
+function exportRef (operation, num) {
+  // module.exports on this
+  trampoline(function() {
+    return repeat(operation, num)
+  })
+}
