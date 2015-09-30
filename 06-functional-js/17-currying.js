@@ -17,3 +17,14 @@ function curryN(fn, n) {
 }
 
 module.exports = curryN;
+
+
+// Reference solution
+
+function curryNRef(fn, n) {
+  n = n || fn.length
+  return function curriedN(arg) {
+    if (n <= 1) return fn(arg)
+    return curryNRef(fn.bind(this, arg), n - 1)
+  }
+}
