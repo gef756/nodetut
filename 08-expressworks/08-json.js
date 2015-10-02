@@ -6,9 +6,13 @@ var app = express();
 app.get('/books', function (req, res) {
   fs.readFile(process.argv[3], function(err, data) {
     if (err) {
-      return;
+      return res.sendStatus(500);
     }
-    var theObj = JSON.parse(data.toString());
+    try {
+      var theObj = JSON.parse(data.toString());
+    } catch (e) {
+      res.sendStatus(500);
+    }
     res.json(theObj);
   });
 });
